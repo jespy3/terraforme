@@ -8,6 +8,6 @@ resource "aws_instance" "MyResourceName" {
 }
 
 resource "aws_eip" "ip" {
-	vpc = true
-	instance = aws_instance.MyResourceName.id
+  vpc      = true
+  instance = aws_instance.MyResourceName.id
 }
