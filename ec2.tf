@@ -6,3 +6,8 @@ resource "aws_instance" "MyResourceName" {
     Name = var.instance_name_tag
   }
 }
+
+resource "aws_eip" "ip" {
+	vpc = true
+	instance = aws_instance.MyResourceName.id
+}
