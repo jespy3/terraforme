@@ -5,6 +5,10 @@ resource "aws_instance" "MyResourceName" {
   tags = {
     Name = var.instance_name_tag
   }
+
+  provisioner "local-exec" {
+    command = "echo ${aws_instance.MyResourceName.public_ip} > ip_address.txt"
+  }
 }
 
 resource "aws_eip" "ip" {
