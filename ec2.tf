@@ -3,6 +3,6 @@ resource "aws_instance" "MyResourceName" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "HelloAlexFromTerraform"
+    Name = var.instance_name_tag
   }
 }
